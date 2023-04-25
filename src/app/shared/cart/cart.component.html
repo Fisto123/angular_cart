@@ -1,0 +1,30 @@
+<div class="cart">
+  <div
+    *ngIf="cartItems.length === 0"
+    class="empty-cart d-flex flex-column align-items-center"
+  >
+    <h1 class="text-large text-theme mb-50 text-danger oops">Oops</h1>
+    <img src="assets/info.webp" alt="" class="cart-empty-img" />
+    <h1 class="mt-4">No items in cart</h1>
+    <h3>Add Items to continue shopping</h3>
+    <div class="btnn">
+      <button routerLink="/" class="btn-theme w-105 p-4">Shop Now</button>
+    </div>
+  </div>
+  <div
+    *ngIf="cartItems.length > 0"
+    class="cart-content d-flex justify-content-between py-15"
+  >
+    <div
+      class="container tems-container d-flex flex-column justify-content-between mb-20 gap-10"
+    >
+      <hin-cart-item
+        [item]="item"
+        *ngFor="let item of cartItems"
+      ></hin-cart-item>
+    </div>
+    <div>
+      <hin-price-details></hin-price-details>
+    </div>
+  </div>
+</div>

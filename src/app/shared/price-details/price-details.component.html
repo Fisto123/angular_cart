@@ -1,0 +1,26 @@
+<div class="price-details p-4">
+  <div class="text-secondary">
+    <span>PRICE DETAILS</span>
+  </div>
+  <div class="d-flex justify-content-between">
+    <span>Price{{ cartItems.length }}</span>
+    <span>{{ cartItemsPrice | currency }}</span>
+  </div>
+  <div class="d-flex justify-content-between">
+    <span>Discount</span>
+    <span>
+      <b class="text-success">-{{ cartItemsDiscount | currency }}</b>
+    </span>
+  </div>
+  <div class="d-flex justify-content-between mt-3">
+    <h3>Delivery Charges</h3>
+    <span *ngIf="deliveryCharge === 0">FREE</span>
+    <h5 *ngIf="deliveryCharge">{{ deliveryCharge }}</h5>
+  </div>
+  <div class="d-flex justify-content-between mt-3 total-amount">
+    <h3>Total Amount</h3>
+    <h5>
+      {{ cartItemsPrice - cartItemsDiscount + deliveryCharge | currency }}
+    </h5>
+  </div>
+</div>

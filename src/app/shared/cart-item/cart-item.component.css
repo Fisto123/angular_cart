@@ -1,0 +1,22 @@
+.book-card {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 460px;
+  background-color: #ffe6c6;
+  margin-bottom: 12px;
+  height: 550px;
+  cursor: pointer;
+}
+.book-thumb {
+  width: 100%;
+  border: 5px;
+}
+.w-fit {
+  width: fit-content;
+}
+.texx {
+  font-size: 20px;
+  align-items: center;
+}
+.right-container {
+}

@@ -1,0 +1,16 @@
+<div class="d-flex">
+  <div></div>
+  <H1
+    *ngIf="books.length === 0"
+    class="justify-content-center m-auto text-danger"
+    >NO PRODUCTS YET</H1
+  >
+
+  <div class="home-main-row">
+    <hin-product
+      class="col-md-4"
+      [book]="item"
+      *ngFor="let item of books"
+    ></hin-product>
+  </div>
+</div>

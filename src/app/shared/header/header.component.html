@@ -1,0 +1,46 @@
+<div class="header d-flex align-items-center">
+  <a href="/"><img src="assets/books.png" class="main-logo" alt="" /></a>
+  <form #searchBox="ngForm">
+    <div class="header-search d-flex align-items-center">
+      <input
+        type="text"
+        name="search"
+        class="search-box mx-3"
+        name="searchText"
+        [(ngModel)]="searchText"
+        placeholder="search for book..."
+      />
+    </div>
+  </form>
+  <button class="btn btn-theme mx-4" (click)="showSortMenu()">Sort</button>
+  <div class="dropdown-container" *ngIf="isSortMenuVisible">
+    <div class="dropdown-list row w-250">
+      <span
+        class="dropdown-list-item"
+        *ngFor="let criterion of criteria"
+        (click)="sortBook(criterion)"
+      >
+        {{ criterion }}
+      </span>
+    </div>
+  </div>
+  <button class="btn btn-theme mx-4" (click)="showPriceMenu()">filter</button>
+
+  <div class="dropdown-container" *ngIf="isPriceMenuVisible">
+    <div class="dropdown-list row w-250">
+      <span
+        class="dropdown-list-item"
+        *ngFor="let price of priceCriteria"
+        (click)="filterBook(price)"
+      >
+        ${{ price }}
+      </span>
+    </div>
+  </div>
+  <div class="header-right">
+    <div class="cart" routerLink="cart">
+      <img src="assets/books.png" class="main-logo" alt="" />
+      <h2 class="cart-no">{{ cartItemCount }}</h2>
+    </div>
+  </div>
+</div>
